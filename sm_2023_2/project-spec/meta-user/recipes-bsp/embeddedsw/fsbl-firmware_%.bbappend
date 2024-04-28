@@ -1,0 +1,1 @@
+YAML_COMPILER_FLAGS:append = " -DFSBL_DEBUG"
