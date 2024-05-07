@@ -1,5 +1,5 @@
 diff --git a/lib/sw_apps/zynqmp_fsbl/src/xfsbl_hooks.c b/lib/sw_apps/zynqmp_fsbl/src/xfsbl_hooks.c
-index 6be980ca38..1c8761b096 100644
+index 6be980ca38..5aeeab0529 100644
 --- a/lib/sw_apps/zynqmp_fsbl/src/xfsbl_hooks.c
 +++ b/lib/sw_apps/zynqmp_fsbl/src/xfsbl_hooks.c
 @@ -31,6 +31,7 @@
@@ -10,15 +10,67 @@ index 6be980ca38..1c8761b096 100644
  /************************** Constant Definitions *****************************/
  
  /**************************** Type Definitions *******************************/
-@@ -101,6 +102,8 @@ u32 XFsbl_HookBeforeFallback(void)
+@@ -54,6 +55,7 @@ u32 XFsbl_HookBeforeBSDownload(void )
  	 * Add the code here
  	 */
  
++	XFsbl_Printf (DEBUG_GENERAL,"\n\n\n\#################   XFsbl_HookBeforeBSDownload\n");
+ 
+ 	return Status;
+ }
+@@ -66,6 +68,8 @@ u32 XFsbl_HookAfterBSDownload(void )
+ 	/**
+ 	 * Add the code here
+ 	 */
++	XFsbl_Printf (DEBUG_GENERAL,"\n\n\n\#################   XFsbl_HookAfterBSDownload\n");
 +	ProgramSI();
+ 
+ 	return Status;
+ }
+@@ -78,6 +82,7 @@ u32 XFsbl_HookBeforeHandoff(u32 EarlyHandoff)
+ 	/**
+ 	 * Add the code here
+ 	 */
++	XFsbl_Printf (DEBUG_GENERAL,"\n\n\n\#################   XFsbl_HookBeforeHandoff\n");
+ 
+ 	return Status;
+ }
+@@ -101,6 +106,9 @@ u32 XFsbl_HookBeforeFallback(void)
+ 	 * Add the code here
+ 	 */
+ 
++	XFsbl_Printf (DEBUG_GENERAL,"\n\n\n\#################   XFsbl_HookBeforeFallback\n");
++	//ProgramSI();
 +
  	return Status;
  }
  
+@@ -161,7 +169,7 @@ u32 XFsbl_HookPsuInit(void)
+ #endif
+ 
+ 	if (XFSBL_SUCCESS != Status) {
+-			XFsbl_Printf(DEBUG_GENERAL,"XFSBL_PSU_INIT_FAILED\n\r");
++			XFsbl_Printf (DEBUG_GENERAL,"XFSBL_PSU_INIT_FAILED\n\r");
+ 			/**
+ 			 * Need to check a way to communicate both FSBL code
+ 			 * and PSU init error code
+@@ -179,6 +187,8 @@ u32 XFsbl_HookPsuInit(void)
+ 
+ 	XFsbl_Out32(AMS_PS_SYSMON_ANALOG_BUS, PS_SYSMON_ANALOG_BUS_VAL);
+ 
++	XFsbl_Printf (DEBUG_GENERAL,"\n\n\n\#################   XFsbl_HookPsuInit\n");
++
+ 	return Status;
+ }
+ 
+@@ -213,6 +223,7 @@ u32 XFsbl_HookGetPosBootType(void)
+ 	if (0 != RegValue) {
+ 		XFsbl_Out32(PMU_GLOBAL_GLOB_GEN_STORAGE2, 1U);
+ 	}
++	XFsbl_Printf (DEBUG_GENERAL,"\n\n\n\#################   XFsbl_HookGetPosBootType\n");
+ 
+ 	return WarmBoot;
+ }
 diff --git a/lib/sw_apps/zynqmp_fsbl/src/xfsbl_programSI.c b/lib/sw_apps/zynqmp_fsbl/src/xfsbl_programSI.c
 new file mode 100644
 index 0000000000..a29cde849b
@@ -197,7 +249,7 @@ index 0000000000..a29cde849b
 +
 diff --git a/lib/sw_apps/zynqmp_fsbl/src/xfsbl_programSI.h b/lib/sw_apps/zynqmp_fsbl/src/xfsbl_programSI.h
 new file mode 100644
-index 0000000000..603da10a22
+index 0000000000..7289b7cee1
 --- /dev/null
 +++ b/lib/sw_apps/zynqmp_fsbl/src/xfsbl_programSI.h
 @@ -0,0 +1,25 @@
@@ -226,4 +278,3 @@ index 0000000000..603da10a22
 +#endif
 +
 +#endif  /* XFSBL_PROGRAMSI_H */
-+

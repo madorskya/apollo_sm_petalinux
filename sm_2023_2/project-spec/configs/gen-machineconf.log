@@ -1,5 +1,12 @@
 [DEBUG] Using xsct from : /work/Xilinx/petalinux/2023.2/tools/xsct/bin/xsct
 [DEBUG] Using conf/mconf from : /work/Xilinx/petalinux/2023.2/components/yocto/buildtools/sysroots/x86_64-petalinux-linux/usr/bin/mconf
+[INFO] Generating Kconfig for project
+[DEBUG] Running CMD: xsct -sdx -nodisp /home/madorsky/projects/petalinux/sm_2023_2/components/yocto/layers/meta-xilinx/meta-xilinx-core/gen-machine-conf/gen-machine-scripts/hw-description.tcl plnx_gen_hwsysconf /home/madorsky/projects/petalinux/sm_2023_2/project-spec/hw-description/system.xsa /home/madorsky/projects/petalinux/sm_2023_2/project-spec/configs/configs/Kconfig.syshw
+[DEBUG] WARNING: sdtgen package cannot be loaded. System Device tree commands will not 
+ be available
+INFO: [Hsi 55-2053] elapsed time for repository (/work/Xilinx/petalinux/2023.2/tools/xsct/data/embeddedsw) loading 0 seconds
+hsi::open_hw_design: Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 789.613 ; gain = 172.758 ; free physical = 12092 ; free virtual = 31736
+
 [INFO] Silentconfig project
 [DEBUG] Running CMD: yes "" | env KCONFIG_CONFIG=/home/madorsky/projects/petalinux/sm_2023_2/project-spec/configs/config conf /home/madorsky/projects/petalinux/sm_2023_2/project-spec/configs/configs/Kconfig
 [DEBUG] *
@@ -296,6 +303,9 @@ user layer 0 (USER_LAYER_0) []
 #
 # configuration written to /home/madorsky/projects/petalinux/sm_2023_2/project-spec/configs/config
 #
+[INFO] Generating kconfig for rootfs
+[DEBUG] Running CMD: python3 /home/madorsky/projects/petalinux/sm_2023_2/components/yocto/layers/meta-xilinx/meta-xilinx-core/gen-machine-conf/gen-machine-scripts/rootfsconfigs/rootfs_config.py --generate_kconfig /home/madorsky/projects/petalinux/sm_2023_2/project-spec/meta-user/conf/user-rootfsconfig /home/madorsky/projects/petalinux/sm_2023_2/project-spec/configs/rootfsconfigs
+[DEBUG] 
 [INFO] Silentconfig rootfs
 [DEBUG] Running CMD: yes "" | env KCONFIG_CONFIG=/home/madorsky/projects/petalinux/sm_2023_2/project-spec/configs/rootfs_config conf /home/madorsky/projects/petalinux/sm_2023_2/project-spec/configs/rootfsconfigs/Kconfig
 [DEBUG] *
@@ -3852,3 +3862,15 @@ Add Users to Sudo users (ADD_USERS_TO_SUDOERS) [petalinux]
 #
 # configuration written to /home/madorsky/projects/petalinux/sm_2023_2/project-spec/configs/rootfs_config
 #
+[INFO] Adding user layers
+[DEBUG] Adding layer: /home/madorsky/projects/petalinux/sm_2023_2/project-spec/meta-user
+[DEBUG] Running CMD: bitbake-layers -F add-layer /home/madorsky/projects/petalinux/sm_2023_2/project-spec/meta-user
+[DEBUG] NOTE: Starting bitbake server...
+NOTE: Started PRServer with DBfile: /home/madorsky/projects/petalinux/sm_2023_2/build/cache/prserv.sqlite3, Address: 127.0.0.1:44287, PID: 2578227
+
+[INFO] Generating machine conf file
+[INFO] Generating plnxtool conf file
+[DEBUG] Running CMD: nslookup -timeout=10 gitenterprise.xilinx.com | grep "Address" |                 awk '{print $2}' | sed -n 2p
+[DEBUG] 
+[DEBUG] Running CMD: python3 /home/madorsky/projects/petalinux/sm_2023_2/components/yocto/layers/meta-xilinx/meta-xilinx-core/gen-machine-conf/gen-machine-scripts/rootfsconfigs/rootfs_config.py --update_cfg /home/madorsky/projects/petalinux/sm_2023_2/project-spec/configs/rootfs_config /home/madorsky/projects/petalinux/sm_2023_2/project-spec/configs/plnxtool.conf zynqmp
+[DEBUG] 
