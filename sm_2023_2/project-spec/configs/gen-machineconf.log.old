@@ -3852,3 +3852,9 @@ Add Users to Sudo users (ADD_USERS_TO_SUDOERS) [petalinux]
 #
 # configuration written to /home/madorsky/projects/petalinux/sm_2023_2/project-spec/configs/rootfs_config
 #
+[INFO] Adding user layers
+[DEBUG] Adding layer: /home/madorsky/projects/petalinux/sm_2023_2/project-spec/meta-user
+[DEBUG] Running CMD: bitbake-layers -F add-layer /home/madorsky/projects/petalinux/sm_2023_2/project-spec/meta-user
+[DEBUG] NOTE: Starting bitbake server...
+NOTE: Started PRServer with DBfile: /home/madorsky/projects/petalinux/sm_2023_2/build/cache/prserv.sqlite3, Address: 127.0.0.1:35625, PID: 2347980
+
