@@ -1,6 +1,9 @@
 Apollo Service Module Petalinux 2023.2 kernel
+
 Includes support for SSD
+
 How to build:
+
 1. Configure for Petalinux 2023.2, by running settings.sh from petalinux/2023.2 directory
 2. cd sm_2023_2
 3. petalinux-build
