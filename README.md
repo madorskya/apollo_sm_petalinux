@@ -12,3 +12,9 @@ How to build:
 6. petalinux-package --fsbl zynqmp_fsbl.elf --boot --u-boot --force --fpga system.bit
 7. copy BOOT.BIN boot.scr image.ub rootfs.tar.gz onto SD card BOOT partition
 8. Boot SM from that SD card
+
+If using dma-jtag:
+1. untar rootfs.tar.gz
+2. find this file: ./lib/modules/6.1.30-xilinx-v2023.2/extra/dma_proxy.ko
+3. Copy it to the similar path in Alma rootfs image
+4. use insmod to start it
