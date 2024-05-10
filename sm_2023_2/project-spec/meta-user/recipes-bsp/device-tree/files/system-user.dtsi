@@ -3,6 +3,13 @@
 chosen {
 bootargs = "console=ttyPS0,115200 earlyprintk uio_pdrv_genirq.of_id=generic-uio root=/dev/mmcblk1p2 rw rootwait";
 };
+    dma_proxy {
+        compatible ="xlnx,dma_proxy";
+        dmas = <&DMA_JTAG_axi_dma_0 0 &DMA_JTAG_axi_dma_0 1>;
+        dma-names = "dma_proxy_tx", "dma_proxy_rx";
+        /*dma-coherent;*/
+    };
+
 };
 
 // https://support.xilinx.com/s/question/0D54U00007L8Ab0SAF/sata-ok-from-uboot-not-ok-from-linux?language=en_US
