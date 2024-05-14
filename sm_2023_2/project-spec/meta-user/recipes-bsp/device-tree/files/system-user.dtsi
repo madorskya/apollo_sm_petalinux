@@ -9,8 +9,138 @@ bootargs = "console=ttyPS0,115200 earlyprintk uio_pdrv_genirq.of_id=generic-uio 
         dma-names = "dma_proxy_tx", "dma_proxy_rx";
         /*dma-coherent;*/
     };
+  amba_pl@0 {
+    axiSlaveSERV: SERV@A8004000 {
+      reg = <0x0 0xA8004000 0x0 0x1000>;
+        compatible = "generic-uio";
+        label = "SERV";
+        linux,uio-name = "SERV";
+
+    };
+  };
+  amba_pl@0 {
+    axiSlaveSLAVE_I2C: SLAVE_I2C@A8006000 {
+      reg = <0x0 0xA8006000 0x0 0x2000>;
+        compatible = "generic-uio";
+        label = "SLAVE_I2C";
+        linux,uio-name = "SLAVE_I2C";
+
+    };
+  };
+  amba_pl@0 {
+    axiSlaveSM_INFO: SM_INFO@A8005000 {
+      reg = <0x0 0xA8005000 0x0 0x1000>;
+        compatible = "generic-uio";
+        label = "SM_INFO";
+        linux,uio-name = "SM_INFO";
+
+    };
+  };
+  amba_pl@0 {
+    axiSlavePLXVC: PLXVC@A0007000 {
+      reg = <0x0 0xA0007000 0x0 0x1000>;
+        compatible = "generic-uio";
+        label = "PLXVC";
+        linux,uio-name = "PLXVC";
+
+    };
+  };
+  amba_pl@0 {
+    axiSlaveCM: CM@A0100000 {
+      reg = <0x0 0xA0100000 0x0 0x20000>;
+        compatible = "generic-uio";
+        label = "CM";
+        linux,uio-name = "CM";
+
+    };
+  };
 
 };
+
+  &IRQ0_INTR_CTRL{
+   interrupt-parent = <&gic>;
+ interrupts = <0 89 0>;
+
+  };
+  &C2C1_AXI_FW{
+        compatible = "generic-uio";
+        label = "C2C1_AXI_FW";
+        linux,uio-name = "C2C1_AXI_FW";
+
+  };
+  &C2C1_AXILITE_FW{
+        compatible = "generic-uio";
+        label = "C2C1_AXILITE_FW";
+        linux,uio-name = "C2C1_AXILITE_FW";
+
+  };
+  &C2C2_AXI_FW{
+        compatible = "generic-uio";
+        label = "C2C2_AXI_FW";
+        linux,uio-name = "C2C2_AXI_FW";
+
+  };
+  &C2C2_AXILITE_FW{
+        compatible = "generic-uio";
+        label = "C2C2_AXILITE_FW";
+        linux,uio-name = "C2C2_AXILITE_FW";
+
+  };
+  &PL_MEM{
+        compatible = "generic-uio";
+        label = "PL_MEM";
+        linux,uio-name = "PL_MEM";
+
+  };
+  &PL_MEM_CM{
+        compatible = "generic-uio";
+        label = "PL_MEM_CM";
+        linux,uio-name = "PL_MEM_CM";
+
+  };
+  &CM_MON_AXI_FW{
+        compatible = "generic-uio";
+        label = "CM_MON_AXI_FW";
+        linux,uio-name = "CM_MON_AXI_FW";
+
+  };
+  &MONITOR{
+        compatible = "generic-uio";
+        label = "MONITOR";
+        linux,uio-name = "MONITOR";
+
+  };
+  &SI{
+compatible = "xlnx,axi-iic-2.0", "xlnx,xps-iic-2.00.a";
+  };
+  &CM1_UART{
+port-number = <1>;
+  };
+  &CM2_UART{
+port-number = <2>;
+  };
+  &CM1_PB_UART{
+port-number = <100>;
+  };
+  &CM2_PB_UART{
+port-number = <101>;
+  };
+  &ESM_UART{
+port-number = <3>;
+  };
+  &AXI_MON{
+        compatible = "generic-uio";
+        label = "AXI_MON";
+        linux,uio-name = "AXI_MON";
+
+  };
+  &INT_AXI_FW{
+        compatible = "generic-uio";
+        label = "INT_AXI_FW";
+        linux,uio-name = "INT_AXI_FW";
+
+  };
+
 
 // https://support.xilinx.com/s/question/0D54U00007L8Ab0SAF/sata-ok-from-uboot-not-ok-from-linux?language=en_US
 &sata {
