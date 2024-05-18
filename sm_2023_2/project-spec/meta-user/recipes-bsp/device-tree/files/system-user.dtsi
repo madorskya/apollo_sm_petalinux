@@ -1,7 +1,11 @@
 /include/ "system-conf.dtsi"
 / {
 chosen {
-bootargs = "console=ttyPS0,115200 earlyprintk uio_pdrv_genirq.of_id=generic-uio root=/dev/mmcblk1p2 rw rootwait";
+// SD booting
+//bootargs = "console=ttyPS0,115200 earlyprintk uio_pdrv_genirq.of_id=generic-uio root=/dev/mmcblk1p2 rw rootwait";
+
+// SSD booting
+bootargs = "console=ttyPS0,115200 earlyprintk uio_pdrv_genirq.of_id=generic-uio root=/dev/sda1 rw rootwait";
 };
     dma_proxy {
         compatible ="xlnx,dma_proxy";
