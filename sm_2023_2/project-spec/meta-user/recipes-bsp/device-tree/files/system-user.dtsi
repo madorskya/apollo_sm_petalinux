@@ -1,11 +1,14 @@
 /include/ "system-conf.dtsi"
 / {
 chosen {
-// SD booting
+// SD boot
 //bootargs = "console=ttyPS0,115200 earlyprintk uio_pdrv_genirq.of_id=generic-uio root=/dev/mmcblk1p2 rw rootwait";
 
-// SSD booting
-bootargs = "console=ttyPS0,115200 earlyprintk uio_pdrv_genirq.of_id=generic-uio root=/dev/sda1 rw rootwait";
+// SSD boot
+//bootargs = "console=ttyPS0,115200 earlyprintk uio_pdrv_genirq.of_id=generic-uio root=/dev/sda1 rw rootwait";
+
+// NFS boot. Pay attention to IP address and /export path, they must match your NFS host
+bootargs = "console=ttyPS0,115200 earlyprintk uio_pdrv_genirq.of_id=generic-uio ip=dhcp root=/dev/nfs rootfstype=nfs nfsroot=192.168.41.1:/mnt/myshareddir,port=2049,nfsvers=3,tcp rw loglevel=8 nfsrootdebug";
 };
     dma_proxy {
         compatible ="xlnx,dma_proxy";
