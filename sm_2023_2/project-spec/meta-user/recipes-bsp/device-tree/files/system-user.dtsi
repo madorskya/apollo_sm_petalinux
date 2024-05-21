@@ -4,6 +4,9 @@ chosen {
 // SD boot
 //bootargs = "console=ttyPS0,115200 earlyprintk uio_pdrv_genirq.of_id=generic-uio root=/dev/mmcblk1p2 rw rootwait";
 
+// eMMC boot
+//bootargs = "console=ttyPS0,115200 earlyprintk uio_pdrv_genirq.of_id=generic-uio root=/dev/mmcblk0p2 rw rootwait";
+
 // SSD boot
 //bootargs = "console=ttyPS0,115200 earlyprintk uio_pdrv_genirq.of_id=generic-uio root=/dev/sda1 rw rootwait";
 
