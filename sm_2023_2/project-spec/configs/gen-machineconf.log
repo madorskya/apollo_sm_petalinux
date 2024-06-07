@@ -5,7 +5,7 @@
 [DEBUG] WARNING: sdtgen package cannot be loaded. System Device tree commands will not 
  be available
 INFO: [Hsi 55-2053] elapsed time for repository (/tools/Xilinx/petalinux/tools/xsct/data/embeddedsw) loading 0 seconds
-hsi::open_hw_design: Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 738.797 ; gain = 228.418 ; free physical = 9633 ; free virtual = 14011
+hsi::open_hw_design: Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 738.797 ; gain = 189.742 ; free physical = 9426 ; free virtual = 11357
 
 [INFO] Silentconfig project
 [DEBUG] Running CMD: yes "" | env KCONFIG_CONFIG=/home/madorsky/github/petalinux/apollo/apollo_sm_petalinux/sm_2023_2/project-spec/configs/config conf /home/madorsky/github/petalinux/apollo/apollo_sm_petalinux/sm_2023_2/project-spec/configs/configs/Kconfig
@@ -3871,7 +3871,7 @@ Add Users to Sudo users (ADD_USERS_TO_SUDOERS) [petalinux]
 [DEBUG] Adding layer: /home/madorsky/github/petalinux/apollo/apollo_sm_petalinux/sm_2023_2/project-spec/meta-user
 [DEBUG] Running CMD: bitbake-layers -F add-layer /home/madorsky/github/petalinux/apollo/apollo_sm_petalinux/sm_2023_2/project-spec/meta-user
 [DEBUG] NOTE: Starting bitbake server...
-NOTE: Started PRServer with DBfile: /home/madorsky/github/petalinux/apollo/apollo_sm_petalinux/sm_2023_2/build/cache/prserv.sqlite3, Address: 127.0.0.1:46673, PID: 20113
+NOTE: Started PRServer with DBfile: /home/madorsky/github/petalinux/apollo/apollo_sm_petalinux/sm_2023_2/build/cache/prserv.sqlite3, Address: 127.0.0.1:35453, PID: 32618
 
 [INFO] Generating machine conf file
 [INFO] Generating plnxtool conf file
