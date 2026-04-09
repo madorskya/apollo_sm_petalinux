@@ -10,8 +10,8 @@ How to build:
 4. petalinux-build
 5. cd images/linux
 6. petalinux-package --fsbl zynqmp_fsbl.elf --boot --u-boot --force --fpga system.bit
-7. copy BOOT.BIN boot.scr image.ub rootfs.tar.gz onto SD card BOOT partition
-8. Boot SM from that SD card
+7. copy BOOT.BIN boot.scr image.ub rootfs.tar.gz onto SD card or EMMC (depending on boot device selection) BOOT partition
+8. Boot SM from that SD card or EMMC
 
 If using dma-jtag:
 1. untar rootfs.tar.gz
