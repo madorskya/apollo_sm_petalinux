@@ -18,3 +18,11 @@ If using dma-jtag:
 2. find this file: ./lib/modules/6.1.30-xilinx-v2023.2/extra/dma_proxy.ko
 3. Copy it to the similar path in Alma rootfs image
 4. use insmod to start it
+
+How to select boot source:
+
+1. Edit this file: project-spec/meta-user/recipes-bsp/device-tree/files/system-user.dtsi
+2. Remove comment from the boot section you want, comment out other two
+3. petalinux-build -x mrproper
+4. rm -rf components
+5. petalinux-build
