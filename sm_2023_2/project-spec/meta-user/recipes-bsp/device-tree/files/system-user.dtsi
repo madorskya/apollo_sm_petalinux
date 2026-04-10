@@ -1,16 +1,18 @@
 /include/ "system-conf.dtsi"
 / {
 chosen {
-// SD boot
-bootargs = "console=ttyPS0,115200 earlyprintk uio_pdrv_genirq.of_id=generic-uio root=/dev/mmcblk1p2 rw rootwait";
+// boot partition could be on SD or EMMC. Select by setting bootmode in IPMC
+// the settings below determine where to look for rootfs
+// SD rootfs
+//bootargs = "console=ttyPS0,115200 earlyprintk uio_pdrv_genirq.of_id=generic-uio root=/dev/mmcblk1p2 rw rootwait";
 
-// eMMC boot
+// eMMC rootfs
 //bootargs = "console=ttyPS0,115200 earlyprintk uio_pdrv_genirq.of_id=generic-uio root=/dev/mmcblk0p2 rw rootwait";
 
-// SSD boot
-//bootargs = "console=ttyPS0,115200 earlyprintk uio_pdrv_genirq.of_id=generic-uio root=/dev/sda1 rw rootwait";
+// SSD rootfs
+bootargs = "console=ttyPS0,115200 earlyprintk uio_pdrv_genirq.of_id=generic-uio root=/dev/sda1 rw rootwait";
 
-// NFS boot. Pay attention to IP address and /export path, they must match your NFS host. 10.50 address is server-room computer in BU
+// NFS rootfs. Pay attention to IP address and /export path, they must match your NFS host. 10.50 address is server-room computer in BU
 //bootargs = "console=ttyPS0,115200 earlyprintk uio_pdrv_genirq.of_id=generic-uio ip=dhcp root=/dev/nfs rootfstype=nfs nfsroot=192.168.10.50:/mnt/myshareddir,port=2049,nfsvers=3,tcp rw loglevel=8 nfsrootdebug";
 
 	aliases {
