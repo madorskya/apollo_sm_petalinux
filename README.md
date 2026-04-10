@@ -19,10 +19,11 @@ If using dma-jtag:
 3. Copy it to the similar path in Alma rootfs image
 4. use insmod to start it
 
-How to select boot source:
+How to select boot source and rootfs location:
 
-1. Edit this file: project-spec/meta-user/recipes-bsp/device-tree/files/system-user.dtsi
-2. Remove comment from the boot section you want, comment out other two
-3. petalinux-build -x mrproper
-4. rm -rf components
-5. petalinux-build
+1. Set boot source by issuing bootmode command in IPMC. bootmode 0 = EMMC, bootmode 3 = SD
+2. Edit this file to set rootfs location: project-spec/meta-user/recipes-bsp/device-tree/files/system-user.dtsi
+3. Remove comment from the section you want, comment out other two
+4. petalinux-build -x mrproper
+5. rm -rf components
+6. petalinux-build
